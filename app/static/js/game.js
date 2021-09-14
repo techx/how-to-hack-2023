@@ -14,6 +14,7 @@ function getRandomInt(max) {
 function getNewProblem(){
     var correct = document.getElementById("correct");
     var wrong = document.getElementById("wrong");
+    var prompt = document.getElementById("prompt");
 
     correct.removeEventListener("click", correctAnswer);
     correct.removeEventListener("click", gameOver);
@@ -27,7 +28,6 @@ function getNewProblem(){
 
     var displayed_sol = num1 + num2 + ADJUST[getRandomInt(2)];
 
-    var prompt = document.getElementById("prompt");
     prompt.innerHTML = `${num1} + ${num2} = ${displayed_sol}`
 
     if (num1 + num2 == displayed_sol){ // prompt is correct
