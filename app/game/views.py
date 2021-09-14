@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, render_template
 
 game = Blueprint("game", __name__, url_prefix='/')
 
