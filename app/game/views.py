@@ -1,19 +1,19 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, render_template
 
-game = Blueprint("mod2", __name__, url_prefix='/mod2')
+game = Blueprint("game", __name__, url_prefix='/')
 
 @game.route("/", methods=['GET'])
 def homepage():
-    return "homepage"
+    return render_template('index.html')
 
 @game.route("/easy", methods=['GET'])
 def easy():
-    return "easy"
+    return render_template('game.html', mode="Easy")
 
 @game.route("/hard", methods=['GET'])
 def hard():
-    return "hard"
+    return render_template('game.html', mode="Hard")
 
-@game.route("/over", methods=['GET'])
-def over():
-    return "game over"
+@game.route("/over/<score>", methods=['GET'])
+def over(score):
+    return render_template('over.html', score=score)
