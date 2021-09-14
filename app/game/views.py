@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 
-game = Blueprint("mod2", __name__, url_prefix='/mod2')
+game = Blueprint("game", __name__, url_prefix='/')
 
 @game.route("/", methods=['GET'])
 def homepage():
